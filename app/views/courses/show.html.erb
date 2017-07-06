@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @course.code %>
+</p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%= @course.fullname %>
+</p>
+
+<p>
+  <strong>Shortname:</strong>
+  <%= @course.shortname %>
+</p>
+
+<p>
+  <strong>Courseidnumber:</strong>
+  <%= @course.courseidnumber %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @course.summary %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @course.format %>
+</p>
+
+<p>
+  <strong>Numberofweekstopics:</strong>
+  <%= @course.numberofweekstopics %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @course.start %>
+</p>
+
+<p>
+  <strong>Hiddensections:</strong>
+  <%= @course.hiddensections %>
+</p>
+
+<p>
+  <strong>Newsitemstoshow:</strong>
+  <%= @course.newsitemstoshow %>
+</p>
+
+<p>
+  <strong>Showgrades:</strong>
+  <%= @course.showgrades %>
+</p>
+
+<p>
+  <strong>Showactivityreports:</strong>
+  <%= @course.showactivityreports %>
+</p>
+
+<p>
+  <strong>Maxuploadsize:</strong>
+  <%= @course.maxuploadsize %>
+</p>
+
+<p>
+  <strong>Defaultroles:</strong>
+  <%= @course.defaultroles %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @issue.code %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @issue.project %>
+</p>
+
+<p>
+  <strong>Issuetype:</strong>
+  <%= @issue.issuetype %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @issue.summary %>
+</p>
+
+<p>
+  <strong>Storypoints:</strong>
+  <%= @issue.storypoints %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @issue.priority %>
+</p>
+
+<p>
+  <strong>Duedate:</strong>
+  <%= @issue.duedate %>
+</p>
+
+<p>
+  <strong>Components:</strong>
+  <%= @issue.components %>
+</p>
+
+<p>
+  <strong>Affectsversions:</strong>
+  <%= @issue.affectsversions %>
+</p>
+
+<p>
+  <strong>Fixversions:</strong>
+  <%= @issue.fixversions %>
+</p>
+
+<p>
+  <strong>Assignee:</strong>
+  <%= @issue.assignee %>
+</p>
+
+<p>
+  <strong>Environment:</strong>
+  <%= @issue.environment %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @issue.description %>
+</p>
+
+<p>
+  <strong>Labels:</strong>
+  <%= @issue.labels %>
+</p>
+
+<p>
+  <strong>Epic:</strong>
+  <%= @issue.epic %>
+</p>
+
+<p>
+  <strong>Sprint:</strong>
+  <%= @issue.sprint %>
+</p>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>

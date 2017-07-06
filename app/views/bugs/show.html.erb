@@ -1,0 +1,119 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @bug.code %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @bug.product %>
+</p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @bug.component %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @bug.version %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @bug.summary %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bug.description %>
+</p>
+
+<p>
+  <strong>Hardware:</strong>
+  <%= @bug.hardware %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @bug.importance %>
+</p>
+
+<p>
+  <strong>Targetmilestone:</strong>
+  <%= @bug.targetmilestone %>
+</p>
+
+<p>
+  <strong>Assignedto:</strong>
+  <%= @bug.assignedto %>
+</p>
+
+<p>
+  <strong>Qacontact:</strong>
+  <%= @bug.qacontact %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @bug.url %>
+</p>
+
+<p>
+  <strong>Whiteboard:</strong>
+  <%= @bug.whiteboard %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @bug.keywords %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @bug.tags %>
+</p>
+
+<p>
+  <strong>Dependson:</strong>
+  <%= @bug.dependson %>
+</p>
+
+<p>
+  <strong>Blocks:</strong>
+  <%= @bug.blocks %>
+</p>
+
+<p>
+  <strong>Origestimated:</strong>
+  <%= @bug.origestimated %>
+</p>
+
+<p>
+  <strong>Hoursworked:</strong>
+  <%= @bug.hoursworked %>
+</p>
+
+<p>
+  <strong>Hoursleft:</strong>
+  <%= @bug.hoursleft %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @bug.deadline %>
+</p>
+
+<p>
+  <strong>Additionalcomments:</strong>
+  <%= @bug.additionalcomments %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @bug.status %>
+</p>
+
+<%= link_to 'Edit', edit_bug_path(@bug) %> |
+<%= link_to 'Back', bugs_path %>

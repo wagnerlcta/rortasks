@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  owner: MyString
+  name: MyString
+  active: false
+  type: 
+  status: MyString
+  start: 2017-07-06
+  end: 2017-07-06
+  expectedrevenue: 1
+  budgetedcost: 1
+  actualcost: 1
+  expectedresponse: 1.5
+  numsent: 1
+  parentcampaign: MyString
+
+two:
+  code: MyString
+  owner: MyString
+  name: MyString
+  active: false
+  type: 
+  status: MyString
+  start: 2017-07-06
+  end: 2017-07-06
+  expectedrevenue: 1
+  budgetedcost: 1
+  actualcost: 1
+  expectedresponse: 1.5
+  numsent: 1
+  parentcampaign: MyString

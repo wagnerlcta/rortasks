@@ -1,0 +1,2 @@
+json.extract! salesforceuser, :id, :name, :alias, :email, :username, :communitynickname, :title, :company, :department, :division, :address, :timezone, :locale, :language, :delegatedapprover, :manager, :role, :userlicense, :profile, :active, :marketinguser, :offlineuser, :knowledgeuser, :forcecomflowuser, :serviceclouduser, :sitecomcontributoruser, :sitecompublisheruser, :mobileuser, :created_at, :updated_at
+json.url salesforceuser_url(salesforceuser, format: :json)

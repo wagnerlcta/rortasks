@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  name: MyString
+  description: MyString
+  displaydescription: false
+  open: 2017-07-06 00:52:36
+  close: 2017-07-06 00:52:36
+  timelimit: 1
+  whentimeexpires: MyString
+  submissiongraceperiod: 1
+  gradecategory: MyString
+  attemptsallowed: MyString
+  gradingmethod: MyString
+
+two:
+  code: MyString
+  name: MyString
+  description: MyString
+  displaydescription: false
+  open: 2017-07-06 00:52:36
+  close: 2017-07-06 00:52:36
+  timelimit: 1
+  whentimeexpires: MyString
+  submissiongraceperiod: 1
+  gradecategory: MyString
+  attemptsallowed: MyString
+  gradingmethod: MyString

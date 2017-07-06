@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bugzillausers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Loginname</th>
+      <th>Realname</th>
+      <th>Password</th>
+      <th>Bugmaildisabled</th>
+      <th>Disabletext</th>
+      <th>Adminpermission</th>
+      <th>Creategroupspermission</th>
+      <th>Edituserspermission</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bugzillausers.each do |bugzillauser| %>
+      <tr>
+        <td><%= bugzillauser.loginname %></td>
+        <td><%= bugzillauser.realname %></td>
+        <td><%= bugzillauser.password %></td>
+        <td><%= bugzillauser.bugmaildisabled %></td>
+        <td><%= bugzillauser.disabletext %></td>
+        <td><%= bugzillauser.adminpermission %></td>
+        <td><%= bugzillauser.creategroupspermission %></td>
+        <td><%= bugzillauser.edituserspermission %></td>
+        <td><%= link_to 'Show', bugzillauser %></td>
+        <td><%= link_to 'Edit', edit_bugzillauser_path(bugzillauser) %></td>
+        <td><%= link_to 'Destroy', bugzillauser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bugzillauser', new_bugzillauser_path %>

@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @quiz.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @quiz.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @quiz.description %>
+</p>
+
+<p>
+  <strong>Displaydescription:</strong>
+  <%= @quiz.displaydescription %>
+</p>
+
+<p>
+  <strong>Open:</strong>
+  <%= @quiz.open %>
+</p>
+
+<p>
+  <strong>Close:</strong>
+  <%= @quiz.close %>
+</p>
+
+<p>
+  <strong>Timelimit:</strong>
+  <%= @quiz.timelimit %>
+</p>
+
+<p>
+  <strong>Whentimeexpires:</strong>
+  <%= @quiz.whentimeexpires %>
+</p>
+
+<p>
+  <strong>Submissiongraceperiod:</strong>
+  <%= @quiz.submissiongraceperiod %>
+</p>
+
+<p>
+  <strong>Gradecategory:</strong>
+  <%= @quiz.gradecategory %>
+</p>
+
+<p>
+  <strong>Attemptsallowed:</strong>
+  <%= @quiz.attemptsallowed %>
+</p>
+
+<p>
+  <strong>Gradingmethod:</strong>
+  <%= @quiz.gradingmethod %>
+</p>
+
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>

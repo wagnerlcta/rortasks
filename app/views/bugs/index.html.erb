@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bugs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Product</th>
+      <th>Component</th>
+      <th>Version</th>
+      <th>Summary</th>
+      <th>Description</th>
+      <th>Hardware</th>
+      <th>Importance</th>
+      <th>Targetmilestone</th>
+      <th>Assignedto</th>
+      <th>Qacontact</th>
+      <th>Url</th>
+      <th>Whiteboard</th>
+      <th>Keywords</th>
+      <th>Tags</th>
+      <th>Dependson</th>
+      <th>Blocks</th>
+      <th>Origestimated</th>
+      <th>Hoursworked</th>
+      <th>Hoursleft</th>
+      <th>Deadline</th>
+      <th>Additionalcomments</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bugs.each do |bug| %>
+      <tr>
+        <td><%= bug.code %></td>
+        <td><%= bug.product %></td>
+        <td><%= bug.component %></td>
+        <td><%= bug.version %></td>
+        <td><%= bug.summary %></td>
+        <td><%= bug.description %></td>
+        <td><%= bug.hardware %></td>
+        <td><%= bug.importance %></td>
+        <td><%= bug.targetmilestone %></td>
+        <td><%= bug.assignedto %></td>
+        <td><%= bug.qacontact %></td>
+        <td><%= bug.url %></td>
+        <td><%= bug.whiteboard %></td>
+        <td><%= bug.keywords %></td>
+        <td><%= bug.tags %></td>
+        <td><%= bug.dependson %></td>
+        <td><%= bug.blocks %></td>
+        <td><%= bug.origestimated %></td>
+        <td><%= bug.hoursworked %></td>
+        <td><%= bug.hoursleft %></td>
+        <td><%= bug.deadline %></td>
+        <td><%= bug.additionalcomments %></td>
+        <td><%= bug.status %></td>
+        <td><%= link_to 'Show', bug %></td>
+        <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+        <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bug', new_bug_path %>

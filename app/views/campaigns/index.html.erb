@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Campaigns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Owner</th>
+      <th>Name</th>
+      <th>Active</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Expectedrevenue</th>
+      <th>Budgetedcost</th>
+      <th>Actualcost</th>
+      <th>Expectedresponse</th>
+      <th>Numsent</th>
+      <th>Parentcampaign</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @campaigns.each do |campaign| %>
+      <tr>
+        <td><%= campaign.code %></td>
+        <td><%= campaign.owner %></td>
+        <td><%= campaign.name %></td>
+        <td><%= campaign.active %></td>
+        <td><%= campaign.type %></td>
+        <td><%= campaign.status %></td>
+        <td><%= campaign.start %></td>
+        <td><%= campaign.end %></td>
+        <td><%= campaign.expectedrevenue %></td>
+        <td><%= campaign.budgetedcost %></td>
+        <td><%= campaign.actualcost %></td>
+        <td><%= campaign.expectedresponse %></td>
+        <td><%= campaign.numsent %></td>
+        <td><%= campaign.parentcampaign %></td>
+        <td><%= link_to 'Show', campaign %></td>
+        <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
+        <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Campaign', new_campaign_path %>

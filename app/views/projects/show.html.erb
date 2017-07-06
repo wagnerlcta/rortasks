@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @project.identifier %>
+</p>
+
+<p>
+  <strong>Homepage:</strong>
+  <%= @project.homepage %>
+</p>
+
+<p>
+  <strong>Public:</strong>
+  <%= @project.public %>
+</p>
+
+<p>
+  <strong>Subprojectof:</strong>
+  <%= @project.subprojectof %>
+</p>
+
+<p>
+  <strong>Bugtracker:</strong>
+  <%= @project.bugtracker %>
+</p>
+
+<p>
+  <strong>Featuretracker:</strong>
+  <%= @project.featuretracker %>
+</p>
+
+<p>
+  <strong>Supporttracker:</strong>
+  <%= @project.supporttracker %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

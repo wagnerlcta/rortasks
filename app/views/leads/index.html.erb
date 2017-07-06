@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Leads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Owner</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Company</th>
+      <th>Title</th>
+      <th>Status</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>County</th>
+      <th>Website</th>
+      <th>Numberofemployees</th>
+      <th>Annualrevenue</th>
+      <th>Source</th>
+      <th>Industry</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leads.each do |lead| %>
+      <tr>
+        <td><%= lead.code %></td>
+        <td><%= lead.owner %></td>
+        <td><%= lead.firstname %></td>
+        <td><%= lead.lastname %></td>
+        <td><%= lead.company %></td>
+        <td><%= lead.title %></td>
+        <td><%= lead.status %></td>
+        <td><%= lead.phone %></td>
+        <td><%= lead.email %></td>
+        <td><%= lead.street %></td>
+        <td><%= lead.city %></td>
+        <td><%= lead.state %></td>
+        <td><%= lead.zipcode %></td>
+        <td><%= lead.county %></td>
+        <td><%= lead.website %></td>
+        <td><%= lead.numberofemployees %></td>
+        <td><%= lead.annualrevenue %></td>
+        <td><%= lead.source %></td>
+        <td><%= lead.industry %></td>
+        <td><%= lead.description %></td>
+        <td><%= link_to 'Show', lead %></td>
+        <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
+        <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lead', new_lead_path %>

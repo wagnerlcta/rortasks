@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @campaign.code %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @campaign.owner %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @campaign.name %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @campaign.active %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @campaign.type %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @campaign.status %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @campaign.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @campaign.end %>
+</p>
+
+<p>
+  <strong>Expectedrevenue:</strong>
+  <%= @campaign.expectedrevenue %>
+</p>
+
+<p>
+  <strong>Budgetedcost:</strong>
+  <%= @campaign.budgetedcost %>
+</p>
+
+<p>
+  <strong>Actualcost:</strong>
+  <%= @campaign.actualcost %>
+</p>
+
+<p>
+  <strong>Expectedresponse:</strong>
+  <%= @campaign.expectedresponse %>
+</p>
+
+<p>
+  <strong>Numsent:</strong>
+  <%= @campaign.numsent %>
+</p>
+
+<p>
+  <strong>Parentcampaign:</strong>
+  <%= @campaign.parentcampaign %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<%= link_to 'Back', campaigns_path %>

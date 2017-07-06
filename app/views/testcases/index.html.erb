@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Testcases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+      <th>Summary</th>
+      <th>Preconditions</th>
+      <th>Status</th>
+      <th>Importance</th>
+      <th>Minutes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testcases.each do |testcase| %>
+      <tr>
+        <td><%= testcase.code %></td>
+        <td><%= testcase.title %></td>
+        <td><%= testcase.summary %></td>
+        <td><%= testcase.preconditions %></td>
+        <td><%= testcase.status %></td>
+        <td><%= testcase.importance %></td>
+        <td><%= testcase.minutes %></td>
+        <td><%= link_to 'Show', testcase %></td>
+        <td><%= link_to 'Edit', edit_testcase_path(testcase) %></td>
+        <td><%= link_to 'Destroy', testcase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Testcase', new_testcase_path %>

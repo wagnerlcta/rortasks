@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  product: MyString
+  component: MyString
+  version: MyString
+  summary: MyString
+  description: MyString
+  hardware: MyString
+  importance: 1
+  targetmilestone: MyString
+  assignedto: MyString
+  qacontact: MyString
+  url: MyString
+  whiteboard: MyString
+  keywords: MyString
+  tags: MyString
+  dependson: MyString
+  blocks: MyString
+  origestimated: 1.5
+  hoursworked: 1.5
+  hoursleft: 1.5
+  deadline: 2017-07-06
+  additionalcomments: MyString
+  status: MyString
+
+two:
+  code: MyString
+  product: MyString
+  component: MyString
+  version: MyString
+  summary: MyString
+  description: MyString
+  hardware: MyString
+  importance: 1
+  targetmilestone: MyString
+  assignedto: MyString
+  qacontact: MyString
+  url: MyString
+  whiteboard: MyString
+  keywords: MyString
+  tags: MyString
+  dependson: MyString
+  blocks: MyString
+  origestimated: 1.5
+  hoursworked: 1.5
+  hoursleft: 1.5
+  deadline: 2017-07-06
+  additionalcomments: MyString
+  status: MyString

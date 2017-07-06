@@ -1,0 +1,123 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Model</th>
+      <th>Sku</th>
+      <th>Weight</th>
+      <th>Manufacturer</th>
+      <th>Status</th>
+      <th>Taxclass</th>
+      <th>Urlkey</th>
+      <th>Visibility</th>
+      <th>Setproductasnewfromdate</th>
+      <th>Setproductasnewtodate</th>
+      <th>Countryofmanufacture</th>
+      <th>Price</th>
+      <th>Cost</th>
+      <th>Specialprice</th>
+      <th>Specialpricefromdate</th>
+      <th>Specialpricetodate</th>
+      <th>Applymap</th>
+      <th>Displayactualprice</th>
+      <th>Suggestedretailprice</th>
+      <th>Metatitle</th>
+      <th>Metakeywords</th>
+      <th>Metadescription</th>
+      <th>Shortdescription</th>
+      <th>Description</th>
+      <th>Indepth</th>
+      <th>Dimensions</th>
+      <th>Activationinformation</th>
+      <th>Color</th>
+      <th>Customdesign</th>
+      <th>Activefrom</th>
+      <th>Activeto</th>
+      <th>Customlayoutupdate</th>
+      <th>Displayproductoptionsin</th>
+      <th>Pagelayout</th>
+      <th>Enablerecurringprofile</th>
+      <th>Allowgiftmessage</th>
+      <th>Managestock</th>
+      <th>Qty</th>
+      <th>Qtyforitemsstatustobecomeoutofstock</th>
+      <th>Minimumqtyallowedinshoppingcart</th>
+      <th>Maximumqtyallowedinshoppingcart</th>
+      <th>Qtyusesdecimals</th>
+      <th>Backorders</th>
+      <th>Notifyforquantitybelow</th>
+      <th>Enableqtyincrements</th>
+      <th>Stockavailability</th>
+      <th>Tags</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.code %></td>
+        <td><%= product.name %></td>
+        <td><%= product.model %></td>
+        <td><%= product.sku %></td>
+        <td><%= product.weight %></td>
+        <td><%= product.manufacturer %></td>
+        <td><%= product.status %></td>
+        <td><%= product.taxclass %></td>
+        <td><%= product.urlkey %></td>
+        <td><%= product.visibility %></td>
+        <td><%= product.setproductasnewfromdate %></td>
+        <td><%= product.setproductasnewtodate %></td>
+        <td><%= product.countryofmanufacture %></td>
+        <td><%= product.price %></td>
+        <td><%= product.cost %></td>
+        <td><%= product.specialprice %></td>
+        <td><%= product.specialpricefromdate %></td>
+        <td><%= product.specialpricetodate %></td>
+        <td><%= product.applymap %></td>
+        <td><%= product.displayactualprice %></td>
+        <td><%= product.suggestedretailprice %></td>
+        <td><%= product.metatitle %></td>
+        <td><%= product.metakeywords %></td>
+        <td><%= product.metadescription %></td>
+        <td><%= product.shortdescription %></td>
+        <td><%= product.description %></td>
+        <td><%= product.indepth %></td>
+        <td><%= product.dimensions %></td>
+        <td><%= product.activationinformation %></td>
+        <td><%= product.color %></td>
+        <td><%= product.customdesign %></td>
+        <td><%= product.activefrom %></td>
+        <td><%= product.activeto %></td>
+        <td><%= product.customlayoutupdate %></td>
+        <td><%= product.displayproductoptionsin %></td>
+        <td><%= product.pagelayout %></td>
+        <td><%= product.enablerecurringprofile %></td>
+        <td><%= product.allowgiftmessage %></td>
+        <td><%= product.managestock %></td>
+        <td><%= product.qty %></td>
+        <td><%= product.qtyforitemsstatustobecomeoutofstock %></td>
+        <td><%= product.minimumqtyallowedinshoppingcart %></td>
+        <td><%= product.maximumqtyallowedinshoppingcart %></td>
+        <td><%= product.qtyusesdecimals %></td>
+        <td><%= product.backorders %></td>
+        <td><%= product.notifyforquantitybelow %></td>
+        <td><%= product.enableqtyincrements %></td>
+        <td><%= product.stockavailability %></td>
+        <td><%= product.tags %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>

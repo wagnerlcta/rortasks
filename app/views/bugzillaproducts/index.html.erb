@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bugzillaproducts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Product</th>
+      <th>Description</th>
+      <th>Openforbugentry</th>
+      <th>Enableunconfirmedstatus</th>
+      <th>Maxvotesperperson</th>
+      <th>Maxvotespersonperbug</th>
+      <th>Confirmbugsvotes</th>
+      <th>Version</th>
+      <th>Createchartdatasets</th>
+      <th>Component</th>
+      <th>Componentdescription</th>
+      <th>Defaultassignee</th>
+      <th>Defaultcclist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bugzillaproducts.each do |bugzillaproduct| %>
+      <tr>
+        <td><%= bugzillaproduct.code %></td>
+        <td><%= bugzillaproduct.product %></td>
+        <td><%= bugzillaproduct.description %></td>
+        <td><%= bugzillaproduct.openforbugentry %></td>
+        <td><%= bugzillaproduct.enableunconfirmedstatus %></td>
+        <td><%= bugzillaproduct.maxvotesperperson %></td>
+        <td><%= bugzillaproduct.maxvotespersonperbug %></td>
+        <td><%= bugzillaproduct.confirmbugsvotes %></td>
+        <td><%= bugzillaproduct.version %></td>
+        <td><%= bugzillaproduct.createchartdatasets %></td>
+        <td><%= bugzillaproduct.component %></td>
+        <td><%= bugzillaproduct.componentdescription %></td>
+        <td><%= bugzillaproduct.defaultassignee %></td>
+        <td><%= bugzillaproduct.defaultcclist %></td>
+        <td><%= link_to 'Show', bugzillaproduct %></td>
+        <td><%= link_to 'Edit', edit_bugzillaproduct_path(bugzillaproduct) %></td>
+        <td><%= link_to 'Destroy', bugzillaproduct, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bugzillaproduct', new_bugzillaproduct_path %>

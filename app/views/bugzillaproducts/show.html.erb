@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @bugzillaproduct.code %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @bugzillaproduct.product %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bugzillaproduct.description %>
+</p>
+
+<p>
+  <strong>Openforbugentry:</strong>
+  <%= @bugzillaproduct.openforbugentry %>
+</p>
+
+<p>
+  <strong>Enableunconfirmedstatus:</strong>
+  <%= @bugzillaproduct.enableunconfirmedstatus %>
+</p>
+
+<p>
+  <strong>Maxvotesperperson:</strong>
+  <%= @bugzillaproduct.maxvotesperperson %>
+</p>
+
+<p>
+  <strong>Maxvotespersonperbug:</strong>
+  <%= @bugzillaproduct.maxvotespersonperbug %>
+</p>
+
+<p>
+  <strong>Confirmbugsvotes:</strong>
+  <%= @bugzillaproduct.confirmbugsvotes %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @bugzillaproduct.version %>
+</p>
+
+<p>
+  <strong>Createchartdatasets:</strong>
+  <%= @bugzillaproduct.createchartdatasets %>
+</p>
+
+<p>
+  <strong>Component:</strong>
+  <%= @bugzillaproduct.component %>
+</p>
+
+<p>
+  <strong>Componentdescription:</strong>
+  <%= @bugzillaproduct.componentdescription %>
+</p>
+
+<p>
+  <strong>Defaultassignee:</strong>
+  <%= @bugzillaproduct.defaultassignee %>
+</p>
+
+<p>
+  <strong>Defaultcclist:</strong>
+  <%= @bugzillaproduct.defaultcclist %>
+</p>
+
+<%= link_to 'Edit', edit_bugzillaproduct_path(@bugzillaproduct) %> |
+<%= link_to 'Back', bugzillaproducts_path %>

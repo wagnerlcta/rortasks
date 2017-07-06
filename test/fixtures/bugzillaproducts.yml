@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  product: MyString
+  description: MyString
+  openforbugentry: false
+  enableunconfirmedstatus: false
+  maxvotesperperson: 1
+  maxvotespersonperbug: 1
+  confirmbugsvotes: 1
+  version: MyString
+  createchartdatasets: false
+  component: MyString
+  componentdescription: MyString
+  defaultassignee: MyString
+  defaultcclist: MyString
+
+two:
+  code: MyString
+  product: MyString
+  description: MyString
+  openforbugentry: false
+  enableunconfirmedstatus: false
+  maxvotesperperson: 1
+  maxvotespersonperbug: 1
+  confirmbugsvotes: 1
+  version: MyString
+  createchartdatasets: false
+  component: MyString
+  componentdescription: MyString
+  defaultassignee: MyString
+  defaultcclist: MyString
