@@ -36,7 +36,7 @@ listingPage(ROOT_URL + 'bugs', "Bugs", "Code", "Product", "Component", "Version"
  
 findElementClass("table", "w3-table-all");
  
-listingPage(ROOT_URL + 'bugzillaUsers', "Bugzillausers", "Loginname", "Realname", "Password",
+listingPage(ROOT_URL + 'bugzillausers', "Bugzillausers", "Loginname", "Realname", "Password",
   "Bugmaildisabled", "Disabletext", "Adminpermission", "Creategroupspermission", "Edituserspermission");
  
 findElementClass("table", "w3-table-all");
