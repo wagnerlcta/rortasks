@@ -29,6 +29,12 @@ var findElementClass = function (element, clazz) {
     3000, element + " element with " + clazz + " class not found");
 }
 
+var findElementIdClass = function (element, id, clazz) {
+  waitFor(By.xpath(
+    "//" + element + "[@id='" + id + "' and contains(@class, '" + clazz + "')]"), 
+    3000, element + " element with " + id + " id and " + clazz + " class not found");
+}
+
 var clickLink = function (link, title) {
   driver.sleep(CLICK_DELAY);
   waitFor(By.xpath('(//a[text()="' + link + '"])[last()]'), 3000, link + ' Link not found').click();
@@ -56,28 +62,38 @@ var back = function () {
   driver.sleep(CLICK_DELAY);
 }
 
-listingPage(ROOT_URL + 'bugs', "Bugs", "Code", "Product", "Component", "Version", "Summary", 
-  "Description", "Importance", "Targetmilestone", "Assignedto", "Qacontact", "Url", 
-  "Whiteboard", "Keywords", "Tags", "Dependson", "Blocks", "Origestimated", "Hoursworked", 
-  "Hoursleft", "Deadline", "Additionalcomments", "Status");
+var labelAfterInput = function(inputId) {
+  waitFor(By.xpath('//input[@id="' + inputId + '"]/following-sibling::label'), 3000, 
+    'Label not found after input ' + inputId);
+}
 
-clickLink('New Bug', 'New Bug');
-findElementClass("form", "w3-card-4");
+listingPage(ROOT_URL + 'testcases', "Testcases", "Code", "Title", "Summary", "Preconditions", "Status",
+  "Importance", "Minutes");
 
-fillForm("bug_code", "1", "bug_product", "Product 1");
-clickButton('Create Bug');
-clickLink('Edit', 'Editing Bug');
-findElementClass("form", "w3-card-4");
+clickLink('New Testcase', 'New Testcase');
+findElementClass("form", "w3-container");
+findElementIdClass('input', 'testcase_title', 'w3-input');
+labelAfterInput('testcase_title');
+findElementIdClass('input', 'testcase_code', 'w3-input');
+labelAfterInput('testcase_code');
+findElementIdClass('input', 'testcase_summary', 'w3-input');
+labelAfterInput('testcase_summary');
+findElementIdClass('input', 'testcase_minutes', 'w3-input');
+labelAfterInput('testcase_minutes');
 
-listingPage(ROOT_URL + 'bugzillausers', "Bugzillausers", "Loginname", "Realname", "Password",
-  "Bugmaildisabled", "Disabletext", "Adminpermission", "Creategroupspermission", "Edituserspermission");
+listingPage(ROOT_URL + 'leads', "Leads", "Code", "Owner", "Firstname", "Lastname", "Company",
+  "Title", "Status", "Phone", "Email", "Street", "City", "State", "Zipcode", "County", "Website", 
+  "Numberofemployees", "Annualrevenue", "Source", "Industry", "Description");
 
-clickLink('New Bugzillauser', 'New Bugzillauser');
-findElementClass("form", "w3-card-4");
-
-fillForm("bugzillauser_loginname", "login1", "bugzillauser_realname", "Name 1");
-clickButton('Create Bugzillauser');
-clickLink('Edit', 'Editing Bugzillauser');
-findElementClass("form", "w3-card-4");
+clickLink('New Lead', 'New Lead');
+findElementClass("form", "w3-container");
+findElementIdClass('input', 'lead_code', 'w3-input');
+labelAfterInput('lead_code');
+findElementIdClass('input', 'lead_owner', 'w3-input');
+labelAfterInput('lead_owner');
+findElementIdClass('input', 'lead_annualrevenue', 'w3-input');
+labelAfterInput('lead_annualrevenue');
+findElementIdClass('input', 'lead_city', 'w3-input');
+labelAfterInput('lead_city');
 
 driver.quit();
