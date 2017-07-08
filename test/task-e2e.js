@@ -17,16 +17,24 @@ var waitFor = function (condition, timeout, message) {
 
 var listingPage = function (url, title) {
   driver.get(url);
-  waitFor(By.xpath("//h1[text()='Listing " + title + "']"), 3000, title + ' Title not found');
-  for(var i = 2; i < arguments.length; i++) {
-    waitFor(By.xpath('//th[text()="' + arguments[i] + '"]'), 3000, arguments[i] + ' Heading not found');
-  }
+  waitFor(By.xpath("//span[text()='Listing " + title + "']"), 3000, title + ' Title not found');
 }
 
 var findElementClass = function (element, clazz) {
   waitFor(By.xpath(
     "//" + element + "[contains(@class, '" + clazz + "')]"), 
     3000, element + " element with " + clazz + " class not found");
+}
+
+var findElementIdClass = function (element, id, clazz) {
+  waitFor(By.xpath(
+    "//" + element + "[@id='" + id + "' and contains(@class, '" + clazz + "')]"), 
+    3000, element + " element with " + id + " id and " + clazz + " class not found");
+}
+
+var findElementText = function (element, text) {
+  driver.sleep(CLICK_DELAY);
+  waitFor(By.xpath('(//' + element + '[text()="' + text + '"])[last()]'), 3000, text + ' text not found');  
 }
 
 var clickLink = function (link, title) {
@@ -56,28 +64,48 @@ var back = function () {
   driver.sleep(CLICK_DELAY);
 }
 
-listingPage(ROOT_URL + 'bugs', "Bugs", "Code", "Product", "Component", "Version", "Summary", 
-  "Description", "Importance", "Targetmilestone", "Assignedto", "Qacontact", "Url", 
-  "Whiteboard", "Keywords", "Tags", "Dependson", "Blocks", "Origestimated", "Hoursworked", 
-  "Hoursleft", "Deadline", "Additionalcomments", "Status");
+var labelAfterInput = function(inputId) {
+  waitFor(By.xpath('//input[@id="' + inputId + '"]/following-sibling::label'), 3000, 
+    'Label not found after input ' + inputId);
+}
 
-clickLink('New Bug', 'New Bug');
-findElementClass("form", "w3-card-4");
+var checkTitleBar = function () {
+  findElementClass('div', 'w3-bar w3-large w3-theme-d4');
+  findElementClass('a', 'w3-bar-item w3-button');
+  findElementClass('i', 'fa fa-bars');
+  findElementClass('span', 'w3-bar-item');
+  findElementClass('a', 'w3-bar-item w3-button w3-right');
+  findElementClass('i', 'fa fa-search');
+}
 
-fillForm("bug_code", "1", "bug_product", "Product 1");
-clickButton('Create Bug');
-clickLink('Edit', 'Editing Bug');
-findElementClass("form", "w3-card-4");
+var checkCard = function () {
+  findElementClass('div', 'w3-panel w3-white w3-card-2 w3-display-container');
+}
 
-listingPage(ROOT_URL + 'bugzillausers', "Bugzillausers", "Loginname", "Realname", "Password",
-  "Bugmaildisabled", "Disabletext", "Adminpermission", "Creategroupspermission", "Edituserspermission");
+listingPage(ROOT_URL + 'testcases', "Testcases");
+checkTitleBar();
 
-clickLink('New Bugzillauser', 'New Bugzillauser');
-findElementClass("form", "w3-card-4");
+clickLink('New Testcase', 'New Testcase');
+fillForm("testcase_code", "1", "testcase_title", "Test case 1");
+clickButton('Create Testcase');
+back();
 
-fillForm("bugzillauser_loginname", "login1", "bugzillauser_realname", "Name 1");
-clickButton('Create Bugzillauser');
-clickLink('Edit', 'Editing Bugzillauser');
-findElementClass("form", "w3-card-4");
+checkCard();
+findElementText('p', '1');
+findElementText('p', 'Test case 1');
+
+
+listingPage(ROOT_URL + 'campaigns', "Campaigns");
+checkTitleBar();
+
+clickLink('New Campaign', 'New Campaign');
+fillForm("campaign_code", "510", "campaign_name", "Campaign 1", "campaign_status", "New");
+clickButton('Create Campaign');
+back();
+
+checkCard();
+findElementText('p', '510');
+findElementText('p', 'Campaign 1');
+findElementText('p', 'New');
 
 driver.quit();
