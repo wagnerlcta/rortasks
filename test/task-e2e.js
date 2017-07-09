@@ -66,14 +66,12 @@ var back = function () {
   driver.sleep(CLICK_DELAY);
 }
 
-var checkCenter = function () {
-  findElementClass("th", "w3-center");
-  findElementClass("td", "w3-center");
+var checkHover = function () {
+  findElementClass("tr", "w3-hover-green");
 }
 
-var checkNotCenter = function () {
-  findNotElementClass("th", "w3-center");
-  findNotElementClass("td", "w3-center");
+var checkNotHover = function () {
+  findNotElementClass("tr", "w3-hover-green");
 }
 
 listingPage(ROOT_URL + 'bugs', "Bugs");
@@ -81,34 +79,34 @@ clickLink('New Bug', 'New Bug');
 fillForm("bug_code", "1", "bug_product", "Product 1");
 clickButton('Create Bug');
 back();
-checkCenter();
+checkHover();
 
 listingPage(ROOT_URL + 'issues', "Issues");
 clickLink('New Issue', 'New Issue');
 fillForm("issue_code", "123", "issue_project", "Project 1");
 clickButton('Create Issue');
 back();
-checkCenter();
+checkHover();
 
 listingPage(ROOT_URL + 'products', "Products");
 clickLink('New Product', 'New Product');
 fillForm("product_code", "111", "product_name", "Product 1");
 clickButton('Create Product');
 back();
-checkCenter();
+checkHover();
 
-listingPage(ROOT_URL + 'projects', "Projects");
-clickLink('New Project', 'New Project');
-fillForm("project_identifier", "111", "project_name", "Project 1");
-clickButton('Create Project');
+listingPage(ROOT_URL + 'campaigns', "Campaigns");
+clickLink('New Campaign', 'New Campaign');
+fillForm("campaign_code", "101", "campaign_name", "Campaign 1");
+clickButton('Create Campaign');
 back();
-checkCenter();
+checkHover();
 
 listingPage(ROOT_URL + 'leads', "Leads");
 clickLink('New Lead', 'New Lead');
 fillForm("lead_code", "100", "lead_firstname", "Lead 1");
 clickButton('Create Lead');
 back();
-checkNotCenter();
+checkNotHover();
 
 driver.quit();
