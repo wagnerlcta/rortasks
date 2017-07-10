@@ -67,13 +67,13 @@ var back = function () {
 }
 
 var checkCenter = function () {
-  findElementClass("th", "w3-center");
-  findElementClass("td", "w3-center");
+  findElementClass("th/div", "w3-center");
+  findElementClass("td/div", "w3-center");
 }
 
 var checkNotCenter = function () {
-  findNotElementClass("th", "w3-center");
-  findNotElementClass("td", "w3-center");
+  findNotElementClass("th/div", "w3-center");
+  findNotElementClass("td/div", "w3-center");
 }
 
 listingPage(ROOT_URL + 'bugs', "Bugs");
@@ -90,25 +90,18 @@ clickButton('Create Issue');
 back();
 checkCenter();
 
-listingPage(ROOT_URL + 'products', "Products");
-clickLink('New Product', 'New Product');
-fillForm("product_code", "111", "product_name", "Product 1");
-clickButton('Create Product');
-back();
-checkCenter();
-
 listingPage(ROOT_URL + 'projects', "Projects");
 clickLink('New Project', 'New Project');
 fillForm("project_identifier", "111", "project_name", "Project 1");
 clickButton('Create Project');
 back();
-checkCenter();
+checkNotCenter();
 
 listingPage(ROOT_URL + 'leads', "Leads");
 clickLink('New Lead', 'New Lead');
 fillForm("lead_code", "100", "lead_firstname", "Lead 1");
 clickButton('Create Lead');
 back();
-checkNotCenter();
+checkCenter();
 
 driver.quit();

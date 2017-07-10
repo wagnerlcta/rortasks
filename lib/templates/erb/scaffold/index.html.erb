@@ -6,7 +6,7 @@
   <thead>
     <tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
-      <th><%= attribute.human_name %></th>
+      <th><div><%= attribute.human_name %></div></th>
 <% end -%>
       <th colspan="3"></th>
     </tr>
@@ -16,7 +16,7 @@
     <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
       <tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
-        <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+        <td><div><%%= <%= singular_table_name %>.<%= attribute.name %> %></div></td>
 <% end -%>
         <td><%%= link_to 'Show', <%= singular_table_name %> %></td>
         <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
