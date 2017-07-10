@@ -66,49 +66,37 @@ var back = function () {
   driver.sleep(CLICK_DELAY);
 }
 
-var checkCenter = function () {
-  findElementClass("th", "w3-center");
-  findElementClass("td", "w3-center");
-}
-
-var checkNotCenter = function () {
-  findNotElementClass("th", "w3-center");
-  findNotElementClass("td", "w3-center");
-}
 
 listingPage(ROOT_URL + 'bugs', "Bugs");
 clickLink('New Bug', 'New Bug');
-fillForm("bug_code", "1", "bug_product", "Product 1");
+fillForm("bug_code", "1", "bug_product", "Product 1", "bug_keywords", "Keyword 1", "bug_tags", "Tag 1");
 clickButton('Create Bug');
-back();
-checkCenter();
+findElementClass("span", "w3-tag w3-green");
+findElementClass("span", "w3-tag w3-blue");
+findNotElementClass("span", "w3-tag w3-red");
 
 listingPage(ROOT_URL + 'issues', "Issues");
 clickLink('New Issue', 'New Issue');
-fillForm("issue_code", "123", "issue_project", "Project 1");
+fillForm("issue_code", "123", "issue_project", "Project 1", "issue_labels", "Label 1");
 clickButton('Create Issue');
-back();
-checkCenter();
+findNotElementClass("span", "w3-tag w3-green");
+findNotElementClass("span", "w3-tag w3-blue");
+findElementClass("span", "w3-tag w3-red");
 
 listingPage(ROOT_URL + 'products', "Products");
 clickLink('New Product', 'New Product');
-fillForm("product_code", "111", "product_name", "Product 1");
+fillForm("product_code", "111", "product_name", "Product 1", "product_tags", "Tag 2");
 clickButton('Create Product');
-back();
-checkCenter();
+findElementClass("span", "w3-tag w3-green");
+findNotElementClass("span", "w3-tag w3-blue");
+findNotElementClass("span", "w3-tag w3-red");
 
 listingPage(ROOT_URL + 'projects', "Projects");
 clickLink('New Project', 'New Project');
 fillForm("project_identifier", "111", "project_name", "Project 1");
 clickButton('Create Project');
-back();
-checkCenter();
-
-listingPage(ROOT_URL + 'leads', "Leads");
-clickLink('New Lead', 'New Lead');
-fillForm("lead_code", "100", "lead_firstname", "Lead 1");
-clickButton('Create Lead');
-back();
-checkNotCenter();
+findNotElementClass("span", "w3-tag w3-green");
+findNotElementClass("span", "w3-tag w3-blue");
+findNotElementClass("span", "w3-tag w3-red");
 
 driver.quit();
