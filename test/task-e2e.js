@@ -29,6 +29,12 @@ var findElementClass = function (element, clazz) {
     3000, element + " element with " + clazz + " class not found");
 }
 
+var findElementClassText = function (element, clazz, text) {
+  driver.sleep(CLICK_DELAY);
+  waitFor(By.xpath('(//' + element + '[text()="' + text + '" and contains(@class, "' + clazz + '")])[last()]'), 
+    3000, text + ' text and ' + clazz + ' class not found');  
+}
+
 var findNotElementClass = function (element, clazz) {
   driver.findElements(By.xpath("//" + element + "[contains(@class, '" + clazz + "')]")).then(
     function (elements) {
@@ -66,14 +72,10 @@ var back = function () {
   driver.sleep(CLICK_DELAY);
 }
 
-var checkCenter = function () {
-  findElementClass("th", "w3-center");
-  findElementClass("td", "w3-center");
-}
-
-var checkNotCenter = function () {
-  findNotElementClass("th", "w3-center");
-  findNotElementClass("td", "w3-center");
+var checkActions = function () {
+  findElementClassText("a", "w3-bar-item w3-button", "Show");
+  findElementClassText("a", "w3-bar-item w3-button", "Edit");
+  findElementClassText("a", "w3-bar-item w3-button", "Destroy");
 }
 
 listingPage(ROOT_URL + 'bugs', "Bugs");
@@ -81,34 +83,13 @@ clickLink('New Bug', 'New Bug');
 fillForm("bug_code", "1", "bug_product", "Product 1");
 clickButton('Create Bug');
 back();
-checkCenter();
+checkActions();
 
 listingPage(ROOT_URL + 'issues', "Issues");
 clickLink('New Issue', 'New Issue');
 fillForm("issue_code", "123", "issue_project", "Project 1");
 clickButton('Create Issue');
 back();
-checkCenter();
-
-listingPage(ROOT_URL + 'products', "Products");
-clickLink('New Product', 'New Product');
-fillForm("product_code", "111", "product_name", "Product 1");
-clickButton('Create Product');
-back();
-checkCenter();
-
-listingPage(ROOT_URL + 'projects', "Projects");
-clickLink('New Project', 'New Project');
-fillForm("project_identifier", "111", "project_name", "Project 1");
-clickButton('Create Project');
-back();
-checkCenter();
-
-listingPage(ROOT_URL + 'leads', "Leads");
-clickLink('New Lead', 'New Lead');
-fillForm("lead_code", "100", "lead_firstname", "Lead 1");
-clickButton('Create Lead');
-back();
-checkNotCenter();
+checkActions();
 
 driver.quit();
