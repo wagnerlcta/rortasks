@@ -39,6 +39,11 @@ var findNotElementClass = function (element, clazz) {
   );
 }
 
+var findElementText = function (element, text) {
+  driver.sleep(CLICK_DELAY);
+  waitFor(By.xpath('(//' + element + '[text()="' + text + '"])[last()]'), 3000, text + ' text not found');  
+}
+
 var clickLink = function (link, title) {
   driver.sleep(CLICK_DELAY);
   waitFor(By.xpath('(//a[text()="' + link + '"])[last()]'), 3000, link + ' Link not found').click();
@@ -66,47 +71,50 @@ var back = function () {
   driver.sleep(CLICK_DELAY);
 }
 
-var checkHover = function () {
-  findElementClass("tr", "w3-hover-green");
+var checkCard = function () {
+  findElementClass("ul", "w3-ul w3-hoverable");
+  findElementClass("li", "w3-border");
+  findElementClass("span", "w3-tag w3-blue");
 }
 
-var checkNotHover = function () {
-  findNotElementClass("tr", "w3-hover-green");
+var checkNotCard = function () {
+  findNotElementClass("ul", "w3-ul w3-hoverable");
+  findNotElementClass("li", "w3-border");
+  findNotElementClass("span", "w3-tag w3-blue");
 }
 
-listingPage(ROOT_URL + 'bugs', "Bugs");
-clickLink('New Bug', 'New Bug');
-fillForm("bug_code", "1", "bug_product", "Product 1");
-clickButton('Create Bug');
+listingPage(ROOT_URL + 'testcases', "Testcases");
+clickLink('New Testcase', 'New Testcase');
+fillForm("testcase_code", "12", "testcase_title", "Title 1");
+clickButton('Create Testcase');
 back();
-checkHover();
+checkCard();
+findElementText('span', '12');
+findElementText('span', 'Title 1');
 
-listingPage(ROOT_URL + 'issues', "Issues");
-clickLink('New Issue', 'New Issue');
-fillForm("issue_code", "123", "issue_project", "Project 1");
-clickButton('Create Issue');
+listingPage(ROOT_URL + 'quizzes', "Quizzes");
+clickLink('New Quiz', 'New Quiz');
+fillForm("quiz_code", "123", "quiz_name", "Quiz 1");
+clickButton('Create Quiz');
 back();
-checkHover();
+checkCard();
+findElementText('span', '123');
+findElementText('span', 'Quiz 1');
 
-listingPage(ROOT_URL + 'products', "Products");
-clickLink('New Product', 'New Product');
-fillForm("product_code", "111", "product_name", "Product 1");
-clickButton('Create Product');
+listingPage(ROOT_URL + 'courses', "Courses");
+clickLink('New Course', 'New Course');
+fillForm("course_code", "111", "course_fullname", "Course 1");
+clickButton('Create Course');
 back();
-checkHover();
-
-listingPage(ROOT_URL + 'campaigns', "Campaigns");
-clickLink('New Campaign', 'New Campaign');
-fillForm("campaign_code", "101", "campaign_name", "Campaign 1");
-clickButton('Create Campaign');
-back();
-checkHover();
+checkCard();
+findElementText('span', '111');
+findElementText('span', 'Course 1');
 
 listingPage(ROOT_URL + 'leads', "Leads");
 clickLink('New Lead', 'New Lead');
 fillForm("lead_code", "100", "lead_firstname", "Lead 1");
 clickButton('Create Lead');
 back();
-checkNotHover();
+checkNotCard();
 
 driver.quit();
