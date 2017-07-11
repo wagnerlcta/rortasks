@@ -29,11 +29,27 @@ var findElementClass = function (element, clazz) {
     3000, element + " element with " + clazz + " class not found");
 }
 
+var findElementIdRowsCols = function (element, id, rows, cols) {
+  waitFor(By.xpath(
+    "//" + element + "[@id='" + id + "' and @rows=" + rows + " and @cols=" + cols + "]"), 
+    3000, element + " element with " + id + " id, " + rows + " rows and " + cols + " cols  not found");
+}
+
 var findNotElementClass = function (element, clazz) {
   driver.findElements(By.xpath("//" + element + "[contains(@class, '" + clazz + "')]")).then(
     function (elements) {
       if (elements.length > 0) {
         throw element + " element with " + clazz + " class found";
+      }
+    }
+  );
+}
+
+var findNotElementId = function (element, id) {
+  driver.findElements(By.xpath("//" + element + "[@id='" + id + "']")).then(
+    function (elements) {
+      if (elements.length > 0) {
+        throw element + " element with " + id + " id found";
       }
     }
   );
@@ -66,49 +82,32 @@ var back = function () {
   driver.sleep(CLICK_DELAY);
 }
 
-var checkCenter = function () {
-  findElementClass("th", "w3-center");
-  findElementClass("td", "w3-center");
-}
-
-var checkNotCenter = function () {
-  findNotElementClass("th", "w3-center");
-  findNotElementClass("td", "w3-center");
-}
-
 listingPage(ROOT_URL + 'bugs', "Bugs");
 clickLink('New Bug', 'New Bug');
 fillForm("bug_code", "1", "bug_product", "Product 1");
-clickButton('Create Bug');
-back();
-checkCenter();
+findElementIdRowsCols('textarea', 'bug_description', 8, 50);
+findElementIdRowsCols('textarea', 'bug_summary', 5, 50);
+findNotElementId('textarea', 'bug_code')
 
 listingPage(ROOT_URL + 'issues', "Issues");
 clickLink('New Issue', 'New Issue');
 fillForm("issue_code", "123", "issue_project", "Project 1");
-clickButton('Create Issue');
-back();
-checkCenter();
-
-listingPage(ROOT_URL + 'products', "Products");
-clickLink('New Product', 'New Product');
-fillForm("product_code", "111", "product_name", "Product 1");
-clickButton('Create Product');
-back();
-checkCenter();
+findElementIdRowsCols('textarea', 'issue_description', 8, 50);
+findElementIdRowsCols('textarea', 'issue_summary', 5, 50);
+findNotElementId('textarea', 'issue_code')
 
 listingPage(ROOT_URL + 'projects', "Projects");
 clickLink('New Project', 'New Project');
 fillForm("project_identifier", "111", "project_name", "Project 1");
-clickButton('Create Project');
-back();
-checkCenter();
+findElementIdRowsCols('textarea', 'project_description', 8, 50);
+findNotElementId('textarea', 'project_summary');
+findNotElementId('textarea', 'project_name')
 
 listingPage(ROOT_URL + 'leads', "Leads");
 clickLink('New Lead', 'New Lead');
 fillForm("lead_code", "100", "lead_firstname", "Lead 1");
-clickButton('Create Lead');
-back();
-checkNotCenter();
+findElementIdRowsCols('textarea', 'lead_description', 8, 50);
+findNotElementId('textarea', 'lead_summary');
+findNotElementId('textarea', 'lead_code')
 
 driver.quit();
