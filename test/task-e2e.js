@@ -23,17 +23,23 @@ var listingPage = function (url, title) {
   }
 }
 
+var findElementMinMax = function (element, min, max) {
+  waitFor(By.xpath(
+    "//" + element + "[@min=" + min + " and @max=" + max + "]"), 
+    3000, element + " element with " + min + " min and " + max + " max not found");
+}
+
 var findElementClass = function (element, clazz) {
   waitFor(By.xpath(
     "//" + element + "[contains(@class, '" + clazz + "')]"), 
     3000, element + " element with " + clazz + " class not found");
 }
 
-var findNotElementClass = function (element, clazz) {
-  driver.findElements(By.xpath("//" + element + "[contains(@class, '" + clazz + "')]")).then(
+var findNotElementMinMax = function (element, min, max) {
+  driver.findElements(By.xpath("//" + element + "[@min=" + min + " and @max=" + max + "]")).then(
     function (elements) {
       if (elements.length > 0) {
-        throw element + " element with " + clazz + " class found";
+        throw element + " element with " + min + " min and " + max + " max found";
       }
     }
   );
@@ -66,49 +72,24 @@ var back = function () {
   driver.sleep(CLICK_DELAY);
 }
 
-var checkCenter = function () {
-  findElementClass("th", "w3-center");
-  findElementClass("td", "w3-center");
+var checkLimit = function () {
+  findElementMinMax("input", 0, 500);
 }
 
-var checkNotCenter = function () {
-  findNotElementClass("th", "w3-center");
-  findNotElementClass("td", "w3-center");
+var checkNotLimit = function () {
+  findNotElementMinMax("input", 0, 500);
 }
 
 listingPage(ROOT_URL + 'bugs', "Bugs");
 clickLink('New Bug', 'New Bug');
-fillForm("bug_code", "1", "bug_product", "Product 1");
-clickButton('Create Bug');
-back();
-checkCenter();
+checkLimit();
 
 listingPage(ROOT_URL + 'issues', "Issues");
 clickLink('New Issue', 'New Issue');
-fillForm("issue_code", "123", "issue_project", "Project 1");
-clickButton('Create Issue');
-back();
-checkCenter();
-
-listingPage(ROOT_URL + 'products', "Products");
-clickLink('New Product', 'New Product');
-fillForm("product_code", "111", "product_name", "Product 1");
-clickButton('Create Product');
-back();
-checkCenter();
+checkLimit();
 
 listingPage(ROOT_URL + 'projects', "Projects");
 clickLink('New Project', 'New Project');
-fillForm("project_identifier", "111", "project_name", "Project 1");
-clickButton('Create Project');
-back();
-checkCenter();
-
-listingPage(ROOT_URL + 'leads', "Leads");
-clickLink('New Lead', 'New Lead');
-fillForm("lead_code", "100", "lead_firstname", "Lead 1");
-clickButton('Create Lead');
-back();
-checkNotCenter();
+checkNotLimit();
 
 driver.quit();
