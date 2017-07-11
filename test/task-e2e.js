@@ -23,17 +23,17 @@ var listingPage = function (url, title) {
   }
 }
 
-var findElementClass = function (element, clazz) {
+var findElementId = function (element, id) {
   waitFor(By.xpath(
-    "//" + element + "[contains(@class, '" + clazz + "')]"), 
-    3000, element + " element with " + clazz + " class not found");
+    "//" + element + "[@id='" + id + "']"), 
+    3000, element + " element with " + id + " id not found");
 }
 
-var findNotElementClass = function (element, clazz) {
-  driver.findElements(By.xpath("//" + element + "[contains(@class, '" + clazz + "')]")).then(
+var findNotElementId = function (element, id) {
+  driver.findElements(By.xpath("//" + element + "[@id='" + id + "']")).then(
     function (elements) {
       if (elements.length > 0) {
-        throw element + " element with " + clazz + " class found";
+        throw element + " element with " + id + " id found";
       }
     }
   );
@@ -66,49 +66,21 @@ var back = function () {
   driver.sleep(CLICK_DELAY);
 }
 
-var checkCenter = function () {
-  findElementClass("th", "w3-center");
-  findElementClass("td", "w3-center");
-}
-
-var checkNotCenter = function () {
-  findNotElementClass("th", "w3-center");
-  findNotElementClass("td", "w3-center");
-}
-
 listingPage(ROOT_URL + 'bugs', "Bugs");
 clickLink('New Bug', 'New Bug');
 fillForm("bug_code", "1", "bug_product", "Product 1");
-clickButton('Create Bug');
-back();
-checkCenter();
+findElementId('datalist', 'bug_status_list');
+findNotElementId('datalist', 'bug_code_list');
 
 listingPage(ROOT_URL + 'issues', "Issues");
 clickLink('New Issue', 'New Issue');
 fillForm("issue_code", "123", "issue_project", "Project 1");
-clickButton('Create Issue');
-back();
-checkCenter();
-
-listingPage(ROOT_URL + 'products', "Products");
-clickLink('New Product', 'New Product');
-fillForm("product_code", "111", "product_name", "Product 1");
-clickButton('Create Product');
-back();
-checkCenter();
-
-listingPage(ROOT_URL + 'projects', "Projects");
-clickLink('New Project', 'New Project');
-fillForm("project_identifier", "111", "project_name", "Project 1");
-clickButton('Create Project');
-back();
-checkCenter();
+findNotElementId('datalist', 'issue_code_list');
 
 listingPage(ROOT_URL + 'leads', "Leads");
 clickLink('New Lead', 'New Lead');
 fillForm("lead_code", "100", "lead_firstname", "Lead 1");
-clickButton('Create Lead');
-back();
-checkNotCenter();
+findElementId('datalist', 'lead_status_list');
+findNotElementId('datalist', 'lead_firstname_list');
 
 driver.quit();
