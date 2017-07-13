@@ -1,4 +1,4 @@
-<%= form_for(@testcase) do |f| %>
+<%= form_for(@testcase, :html => { :class => "w3-container" }) do |f| %>
   <% if @testcase.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@testcase.errors.count, "error") %> prohibited this testcase from being saved:</h2>
@@ -12,32 +12,39 @@
   <% end %>
 
   <div class="field">
+    <%= f.text_field :code, class: 'w3-input' %>
     <%= f.label :code %><br>
-    <%= f.text_field :code %>
+    <p>
   </div>
   <div class="field">
+    <%= f.text_field :title, class: 'w3-input' %>
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <p>
   </div>
   <div class="field">
+    <%= f.text_field :summary, class: 'w3-input' %>
     <%= f.label :summary %><br>
-    <%= f.text_field :summary %>
+    <p>
   </div>
   <div class="field">
+    <%= f.text_field :preconditions, class: 'w3-input' %>
     <%= f.label :preconditions %><br>
-    <%= f.text_field :preconditions %>
+    <p>
   </div>
   <div class="field">
+    <%= f.text_field :status, class: 'w3-input' %>
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <p>
   </div>
   <div class="field">
+    <%= f.text_field :importance, class: 'w3-input' %>
     <%= f.label :importance %><br>
-    <%= f.text_field :importance %>
+    <p>
   </div>
   <div class="field">
+    <%= f.number_field :minutes, class: 'w3-input' %>
     <%= f.label :minutes %><br>
-    <%= f.number_field :minutes %>
+    <p>
   </div>
   <div class="actions">
     <%= f.submit %>

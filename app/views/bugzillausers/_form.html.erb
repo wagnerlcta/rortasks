@@ -1,4 +1,4 @@
-<%= form_for(@bugzillauser) do |f| %>
+<%= form_for(@bugzillauser, :html => { :class => "w3-container" }) do |f| %>
   <% if @bugzillauser.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bugzillauser.errors.count, "error") %> prohibited this bugzillauser from being saved:</h2>
@@ -12,36 +12,44 @@
   <% end %>
 
   <div class="field">
+    <%= f.text_field :loginname, class: 'w3-input' %>
     <%= f.label :loginname %><br>
-    <%= f.text_field :loginname %>
+    <p>
   </div>
   <div class="field">
+    <%= f.text_field :realname, class: 'w3-input' %>
     <%= f.label :realname %><br>
-    <%= f.text_field :realname %>
+    <p>
   </div>
   <div class="field">
+    <%= f.text_field :password, class: 'w3-input' %>
     <%= f.label :password %><br>
-    <%= f.text_field :password %>
+    <p>
   </div>
   <div class="field">
+    <%= f.check_box :bugmaildisabled, class: 'w3-input' %>
     <%= f.label :bugmaildisabled %><br>
-    <%= f.check_box :bugmaildisabled %>
+    <p>
   </div>
   <div class="field">
+    <%= f.text_field :disabletext, class: 'w3-input' %>
     <%= f.label :disabletext %><br>
-    <%= f.text_field :disabletext %>
+    <p>
   </div>
   <div class="field">
+    <%= f.check_box :adminpermission, class: 'w3-input' %>
     <%= f.label :adminpermission %><br>
-    <%= f.check_box :adminpermission %>
+    <p>
   </div>
   <div class="field">
+    <%= f.check_box :creategroupspermission, class: 'w3-input' %>
     <%= f.label :creategroupspermission %><br>
-    <%= f.check_box :creategroupspermission %>
+    <p>
   </div>
   <div class="field">
+    <%= f.check_box :edituserspermission, class: 'w3-input' %>
     <%= f.label :edituserspermission %><br>
-    <%= f.check_box :edituserspermission %>
+    <p>
   </div>
   <div class="actions">
     <%= f.submit %>

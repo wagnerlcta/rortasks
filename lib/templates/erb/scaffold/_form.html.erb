@@ -1,4 +1,4 @@
-<%%= form_for(@<%= singular_table_name %>) do |f| %>
+<%%= form_for(@<%= singular_table_name %>, :html => { :class => "w3-container" }) do |f| %>
   <%% if @<%= singular_table_name %>.errors.any? %>
     <div id="error_explanation">
       <h2><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
@@ -21,8 +21,9 @@
     <%%= f.label :password_confirmation %><br>
     <%%= f.password_field :password_confirmation %>
 <% else -%>
+    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %>, class: 'w3-input' %>
     <%%= f.label :<%= attribute.column_name %> %><br>
-    <%%= f.<%= attribute.field_type %> :<%= attribute.column_name %> %>
+    <p>
 <% end -%>
   </div>
 <% end -%>
