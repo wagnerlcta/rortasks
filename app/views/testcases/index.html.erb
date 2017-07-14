@@ -2,38 +2,27 @@
 
 <h1>Listing Testcases</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Title</th>
-      <th>Summary</th>
-      <th>Preconditions</th>
-      <th>Status</th>
-      <th>Importance</th>
-      <th>Minutes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="w3-ul w3-hoverable">
 
-  <tbody>
     <% @testcases.each do |testcase| %>
-      <tr>
-        <td><%= testcase.code %></td>
-        <td><%= testcase.title %></td>
-        <td><%= testcase.summary %></td>
-        <td><%= testcase.preconditions %></td>
-        <td><%= testcase.status %></td>
-        <td><%= testcase.importance %></td>
-        <td><%= testcase.minutes %></td>
-        <td><%= link_to 'Show', testcase %></td>
-        <td><%= link_to 'Edit', edit_testcase_path(testcase) %></td>
-        <td><%= link_to 'Destroy', testcase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      
+      <li class="w3-border">
+
+      
+   <p> <span class="w3-tag w3-blue"><%= testcase.code %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= testcase.title %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= testcase.summary %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= testcase.preconditions %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= testcase.status %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= testcase.importance %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= testcase.minutes %></span> </p>    
+        </li>
     <% end %>
-  </tbody>
-</table>
+
+</ul>
 
 <br>
 
 <%= link_to 'New Testcase', new_testcase_path %>
+
+

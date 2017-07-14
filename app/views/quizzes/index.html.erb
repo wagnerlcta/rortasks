@@ -2,48 +2,32 @@
 
 <h1>Listing Quizzes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Displaydescription</th>
-      <th>Open</th>
-      <th>Close</th>
-      <th>Timelimit</th>
-      <th>Whentimeexpires</th>
-      <th>Submissiongraceperiod</th>
-      <th>Gradecategory</th>
-      <th>Attemptsallowed</th>
-      <th>Gradingmethod</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<ul class="w3-ul w3-hoverable">
 
-  <tbody>
     <% @quizzes.each do |quiz| %>
-      <tr>
-        <td><%= quiz.code %></td>
-        <td><%= quiz.name %></td>
-        <td><%= quiz.description %></td>
-        <td><%= quiz.displaydescription %></td>
-        <td><%= quiz.open %></td>
-        <td><%= quiz.close %></td>
-        <td><%= quiz.timelimit %></td>
-        <td><%= quiz.whentimeexpires %></td>
-        <td><%= quiz.submissiongraceperiod %></td>
-        <td><%= quiz.gradecategory %></td>
-        <td><%= quiz.attemptsallowed %></td>
-        <td><%= quiz.gradingmethod %></td>
-        <td><%= link_to 'Show', quiz %></td>
-        <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
-        <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      
+      <li class="w3-border">
+
+      
+   <p> <span class="w3-tag w3-blue"><%= quiz.code %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.name %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.description %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.displaydescription %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.open %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.close %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.timelimit %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.whentimeexpires %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.submissiongraceperiod %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.gradecategory %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.attemptsallowed %></span> </p>    
+   <p> <span class="w3-tag w3-blue"><%= quiz.gradingmethod %></span> </p>    
+        </li>
     <% end %>
-  </tbody>
-</table>
+
+</ul>
 
 <br>
 
 <%= link_to 'New Quiz', new_quiz_path %>
+
+
