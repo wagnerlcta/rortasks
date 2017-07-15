@@ -1,84 +1,85 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Code:</strong>
+        <strong>Code:</strong>
   <%= @issue.code %>
-</p>
+  </p>
 
 <p>
-  <strong>Project:</strong>
+        <strong>Project:</strong>
   <%= @issue.project %>
-</p>
+  </p>
 
 <p>
-  <strong>Issuetype:</strong>
+        <strong>Issuetype:</strong>
   <%= @issue.issuetype %>
-</p>
+  </p>
 
 <p>
-  <strong>Summary:</strong>
+        <strong>Summary:</strong>
   <%= @issue.summary %>
-</p>
+  </p>
 
 <p>
-  <strong>Storypoints:</strong>
+        <strong>Storypoints:</strong>
   <%= @issue.storypoints %>
-</p>
+  </p>
 
 <p>
-  <strong>Priority:</strong>
+        <strong>Priority:</strong>
   <%= @issue.priority %>
-</p>
+  </p>
 
 <p>
-  <strong>Duedate:</strong>
+        <strong>Duedate:</strong>
   <%= @issue.duedate %>
-</p>
+  </p>
 
 <p>
-  <strong>Components:</strong>
+        <strong>Components:</strong>
   <%= @issue.components %>
-</p>
+  </p>
 
 <p>
-  <strong>Affectsversions:</strong>
+        <strong>Affectsversions:</strong>
   <%= @issue.affectsversions %>
-</p>
+  </p>
 
 <p>
-  <strong>Fixversions:</strong>
+        <strong>Fixversions:</strong>
   <%= @issue.fixversions %>
-</p>
+  </p>
 
 <p>
-  <strong>Assignee:</strong>
+        <strong>Assignee:</strong>
   <%= @issue.assignee %>
-</p>
+  </p>
 
 <p>
-  <strong>Environment:</strong>
+        <strong>Environment:</strong>
   <%= @issue.environment %>
-</p>
+  </p>
 
 <p>
-  <strong>Description:</strong>
+        <strong>Description:</strong>
   <%= @issue.description %>
-</p>
+  </p>
 
 <p>
-  <strong>Labels:</strong>
+      <span class="w3-tag w3-red"> labels </span>
+      <strong>Labels:</strong>
   <%= @issue.labels %>
-</p>
+  </p>
 
 <p>
-  <strong>Epic:</strong>
+        <strong>Epic:</strong>
   <%= @issue.epic %>
-</p>
+  </p>
 
 <p>
-  <strong>Sprint:</strong>
+        <strong>Sprint:</strong>
   <%= @issue.sprint %>
-</p>
+  </p>
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>

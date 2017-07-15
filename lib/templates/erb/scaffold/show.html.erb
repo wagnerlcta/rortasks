@@ -2,8 +2,18 @@
 
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
 <p>
+  <% if attribute.name == "tags" -%>
+  <span class="w3-tag w3-green"> <%= attribute.name %> </span>
+  <% end -%>
+  <% if attribute.name == "labels" -%>
+  <span class="w3-tag w3-red"> <%= attribute.name %> </span>
+  <% end -%>
+  <% if attribute.name == "keywords" -%>
+  <span class="w3-tag w3-blue"> <%= attribute.name %> </span>
+  <% else -%>
   <strong><%= attribute.human_name %>:</strong>
   <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+  <% end -%>
 </p>
 
 <% end -%>
