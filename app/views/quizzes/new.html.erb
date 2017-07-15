@@ -2,4 +2,13 @@
 
 <%= render 'form' %>
 
+<datalist id="quiz_status_list">
+  <option value="Open">
+  <option value="Closed">
+  <option value="On going">
+  <option value="Review">
+  <option value="Cancelled">
+</datalist>
+<input list="quiz_status_list" id="quiz_status">
+
 <%= link_to 'Back', quizzes_path %>

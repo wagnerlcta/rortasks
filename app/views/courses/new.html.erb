@@ -2,4 +2,13 @@
 
 <%= render 'form' %>
 
+<datalist id="course_status_list">
+  <option value="Open">
+  <option value="Closed">
+  <option value="On going">
+  <option value="Review">
+  <option value="Cancelled">
+</datalist>
+<input list="course_status_list" id="course_status">
+
 <%= link_to 'Back', courses_path %>

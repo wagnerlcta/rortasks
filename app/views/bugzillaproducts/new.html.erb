@@ -2,4 +2,13 @@
 
 <%= render 'form' %>
 
+<datalist id="bugzillaproduct_status_list">
+  <option value="Open">
+  <option value="Closed">
+  <option value="On going">
+  <option value="Review">
+  <option value="Cancelled">
+</datalist>
+<input list="bugzillaproduct_status_list" id="bugzillaproduct_status">
+
 <%= link_to 'Back', bugzillaproducts_path %>

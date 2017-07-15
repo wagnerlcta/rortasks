@@ -2,4 +2,13 @@
 
 <%= render 'form' %>
 
+<datalist id="salesforceuser_status_list">
+  <option value="Open">
+  <option value="Closed">
+  <option value="On going">
+  <option value="Review">
+  <option value="Cancelled">
+</datalist>
+<input list="salesforceuser_status_list" id="salesforceuser_status">
+
 <%= link_to 'Back', salesforceusers_path %>
