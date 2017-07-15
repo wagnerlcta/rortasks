@@ -12,33 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :code %><br>
+        <%= f.label :code %><br>
     <%= f.text_field :code %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :title %><br>
+        <%= f.label :title %><br>
     <%= f.text_field :title %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :summary %><br>
+        <%= f.label :summary %><br>
     <%= f.text_field :summary %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :preconditions %><br>
+        <%= f.label :preconditions %><br>
     <%= f.text_field :preconditions %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :status %><br>
+        <%= f.label :status %><br>
     <%= f.text_field :status %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :importance %><br>
+        <%= f.label :importance %><br>
     <%= f.text_field :importance %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :minutes %><br>
-    <%= f.number_field :minutes %>
-  </div>
+        <%= f.number_field :minutes, {min: "0", max: "500"} %>
+      </div>
   <div class="actions">
     <%= f.submit %>
   </div>

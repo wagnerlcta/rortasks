@@ -12,61 +12,57 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :code %><br>
+        <%= f.label :code %><br>
     <%= f.text_field :code %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :fullname %><br>
+        <%= f.label :fullname %><br>
     <%= f.text_field :fullname %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :shortname %><br>
+        <%= f.label :shortname %><br>
     <%= f.text_field :shortname %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :courseidnumber %><br>
-    <%= f.number_field :courseidnumber %>
-  </div>
+        <%= f.number_field :courseidnumber, {min: "0", max: "500"} %>
+      </div>
   <div class="field">
-    <%= f.label :summary %><br>
+        <%= f.label :summary %><br>
     <%= f.text_field :summary %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :format %><br>
+        <%= f.label :format %><br>
     <%= f.text_field :format %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :numberofweekstopics %><br>
-    <%= f.number_field :numberofweekstopics %>
-  </div>
+        <%= f.number_field :numberofweekstopics, {min: "0", max: "500"} %>
+      </div>
   <div class="field">
-    <%= f.label :start %><br>
+        <%= f.label :start %><br>
     <%= f.date_select :start %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :hiddensections %><br>
+        <%= f.label :hiddensections %><br>
     <%= f.text_field :hiddensections %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :newsitemstoshow %><br>
-    <%= f.number_field :newsitemstoshow %>
-  </div>
+        <%= f.number_field :newsitemstoshow, {min: "0", max: "500"} %>
+      </div>
   <div class="field">
-    <%= f.label :showgrades %><br>
+        <%= f.label :showgrades %><br>
     <%= f.check_box :showgrades %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :showactivityreports %><br>
+        <%= f.label :showactivityreports %><br>
     <%= f.check_box :showactivityreports %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :maxuploadsize %><br>
-    <%= f.number_field :maxuploadsize %>
-  </div>
+        <%= f.number_field :maxuploadsize, {min: "0", max: "500"} %>
+      </div>
   <div class="field">
-    <%= f.label :defaultroles %><br>
+        <%= f.label :defaultroles %><br>
     <%= f.text_field :defaultroles %>
-  </div>
+      </div>
   <div class="actions">
     <%= f.submit %>
   </div>

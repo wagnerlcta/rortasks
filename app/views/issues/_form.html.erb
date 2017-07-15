@@ -12,69 +12,68 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :code %><br>
+        <%= f.label :code %><br>
     <%= f.text_field :code %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :project %><br>
+        <%= f.label :project %><br>
     <%= f.text_field :project %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :issuetype %><br>
+        <%= f.label :issuetype %><br>
     <%= f.text_field :issuetype %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :summary %><br>
+        <%= f.label :summary %><br>
     <%= f.text_field :summary %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :storypoints %><br>
-    <%= f.number_field :storypoints %>
-  </div>
+        <%= f.number_field :storypoints, {min: "0", max: "500"} %>
+      </div>
   <div class="field">
-    <%= f.label :priority %><br>
+        <%= f.label :priority %><br>
     <%= f.text_field :priority %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :duedate %><br>
+        <%= f.label :duedate %><br>
     <%= f.date_select :duedate %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :components %><br>
+        <%= f.label :components %><br>
     <%= f.text_field :components %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :affectsversions %><br>
+        <%= f.label :affectsversions %><br>
     <%= f.text_field :affectsversions %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :fixversions %><br>
+        <%= f.label :fixversions %><br>
     <%= f.text_field :fixversions %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :assignee %><br>
+        <%= f.label :assignee %><br>
     <%= f.text_field :assignee %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :environment %><br>
+        <%= f.label :environment %><br>
     <%= f.text_field :environment %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :description %><br>
+        <%= f.label :description %><br>
     <%= f.text_field :description %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :labels %><br>
+        <%= f.label :labels %><br>
     <%= f.text_field :labels %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :epic %><br>
+        <%= f.label :epic %><br>
     <%= f.text_field :epic %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :sprint %><br>
+        <%= f.label :sprint %><br>
     <%= f.text_field :sprint %>
-  </div>
+      </div>
   <div class="actions">
     <%= f.submit %>
   </div>

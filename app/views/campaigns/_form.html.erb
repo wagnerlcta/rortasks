@@ -12,61 +12,57 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :code %><br>
+        <%= f.label :code %><br>
     <%= f.text_field :code %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :owner %><br>
+        <%= f.label :owner %><br>
     <%= f.text_field :owner %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :name %><br>
+        <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :active %><br>
+        <%= f.label :active %><br>
     <%= f.check_box :active %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :type %><br>
+        <%= f.label :type %><br>
     <%= f.text_field :type %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :status %><br>
+        <%= f.label :status %><br>
     <%= f.text_field :status %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :start %><br>
+        <%= f.label :start %><br>
     <%= f.date_select :start %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :end %><br>
+        <%= f.label :end %><br>
     <%= f.date_select :end %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :expectedrevenue %><br>
-    <%= f.number_field :expectedrevenue %>
-  </div>
+        <%= f.number_field :expectedrevenue, {min: "0", max: "500"} %>
+      </div>
   <div class="field">
-    <%= f.label :budgetedcost %><br>
-    <%= f.number_field :budgetedcost %>
-  </div>
+        <%= f.number_field :budgetedcost, {min: "0", max: "500"} %>
+      </div>
   <div class="field">
-    <%= f.label :actualcost %><br>
-    <%= f.number_field :actualcost %>
-  </div>
+        <%= f.number_field :actualcost, {min: "0", max: "500"} %>
+      </div>
   <div class="field">
-    <%= f.label :expectedresponse %><br>
+        <%= f.label :expectedresponse %><br>
     <%= f.text_field :expectedresponse %>
-  </div>
+      </div>
   <div class="field">
-    <%= f.label :numsent %><br>
-    <%= f.number_field :numsent %>
-  </div>
+        <%= f.number_field :numsent, {min: "0", max: "500"} %>
+      </div>
   <div class="field">
-    <%= f.label :parentcampaign %><br>
+        <%= f.label :parentcampaign %><br>
     <%= f.text_field :parentcampaign %>
-  </div>
+      </div>
   <div class="actions">
     <%= f.submit %>
   </div>
